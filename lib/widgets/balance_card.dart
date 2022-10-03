@@ -36,6 +36,7 @@ class _BalanceCardState extends State<BalanceCard> {
                     width: 10,
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text('BALANCE'),
                       Text('₹ 0.00'),

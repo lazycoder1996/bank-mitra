@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.inficom.bankmitra">
    <application
-        android:label="Bank Mithra"
+        android:label="Bank Mitra"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
