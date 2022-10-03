@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "588555621063",
+    "project_id": "bankmitra-fc1a8",
+    "storage_bucket": "bankmitra-fc1a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588555621063:android:22b16c650a9b8cd26b24e2",
+        "android_client_info": {
+          "package_name": "com.inficom.bankmitra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588555621063-lv6ti70ciqsgeifkquj1i0fqfb4s7ddm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC3NfhZ8bJYtZpvPhiavybZF4fYkO2RJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588555621063-lv6ti70ciqsgeifkquj1i0fqfb4s7ddm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "431314151698",
+    "project_id": "bank-mitra-unique",
+    "storage_bucket": "bank-mitra-unique.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431314151698:android:b3bd3b80b522811b38ebcb",
+        "android_client_info": {
+          "package_name": "com.inficom.bankmitra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431314151698-4s0qahbmbsfre911o14doo2qkbrne7l6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inficom.bankmitra",
+            "certificate_hash": "29c80c7db1e47b07f80d7b02b0d3608afad9398b"
+          }
+        },
+        {
+          "client_id": "431314151698-hmt21kfmq2k06o0bj4tkkp1v3h4ls26m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBncaV1KYHlbRc1UnPSdlafT2GHnlv-7DQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431314151698-hmt21kfmq2k06o0bj4tkkp1v3h4ls26m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
