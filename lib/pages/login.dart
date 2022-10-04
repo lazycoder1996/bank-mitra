@@ -3,6 +3,8 @@ import 'package:bank_sathi/utils/helpers.dart';
 import 'package:bank_sathi/utils/layout.dart';
 import 'package:bank_sathi/utils/navigation.dart';
 import 'package:bank_sathi/widgets/button.dart';
+import 'package:country_calling_code_picker/country.dart';
+import 'package:country_calling_code_picker/functions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -17,12 +19,49 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   TextEditingController phone = TextEditingController();
+  Country _selectedCountry =
+      const Country('India', 'flags/india.png', '91', '91');
+  late Image image;
+
+  @override
+  void initState() {
+    super.initState();
+    image = Image.asset('assets/loginpage.png');
+    initCountry();
+  }
+
+  @override
+  void didChangeDependencies() {
+    precacheImage(image.image, context);
+    super.didChangeDependencies();
+  }
+
+  void initCountry() async {
+    final country = await getDefaultCountry(context);
+    setState(() {
+      _selectedCountry = country;
+    });
+  }
+
+  void _showCountryPicker() async {
+    final country = await showCountryPickerSheet(context);
+    if (country != null) {
+      setState(() {
+        _selectedCountry = country;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.green,
+        decoration: BoxDecoration(
+          color: Colors.green,
+          image: DecorationImage(
+            image: image.image,
+          ),
+        ),
         child: Padding(
           padding: EdgeInsets.all(AppLayout.getHeight(20)),
           child: Column(
@@ -61,12 +100,13 @@ class _LoginPageState extends State<LoginPage> {
                   },
                   child: Text(
                     'By continuing you agree Our Terms and Condition',
+                    textAlign: TextAlign.center,
                     style: whiteText(AppLayout.getHeight(15)),
                   ),
                 ),
               ),
               SizedBox(
-                height: AppLayout.getHeight(30),
+                height: AppLayout.getHeight(20),
               ),
               Center(
                 child: Button(
@@ -104,24 +144,12 @@ class _LoginPageState extends State<LoginPage> {
                     borderSide: BorderSide(color: Colors.white),
                   ),
                   focusColor: Colors.white,
-                  prefixIcon: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Icon(
-                        Icons.call,
-                        color: Colors.white,
-                      ),
-                      const SizedBox(
-                        width: 3,
-                      ),
-                      Text(
-                        '+91',
-                        style: whiteText(AppLayout.getHeight(16)),
-                      ),
-                      const SizedBox(
-                        width: 3,
-                      ),
-                    ],
+                  prefixIcon: TextButton(
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.white,
+                    ),
+                    onPressed: _showCountryPicker,
+                    child: Text(_selectedCountry.callingCode),
                   ),
                 ),
               ),
@@ -218,7 +246,7 @@ class _OtpBottomSheetState extends State<OtpBottomSheet> {
               ),
               SizedBox(
                 height: AppLayout.getHeight(50),
-                width: AppLayout.getWidth(100),
+                width: AppLayout.getHeight(100),
                 child: Button(
                   style: whiteText(18),
                   text: "It's me!",
