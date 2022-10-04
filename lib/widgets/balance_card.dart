@@ -1,3 +1,4 @@
+import 'package:bank_sathi/utils/helpers.dart';
 import 'package:bank_sathi/utils/layout.dart';
 import 'package:bank_sathi/widgets/button.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,8 @@ class _BalanceCardState extends State<BalanceCard> {
   Widget build(BuildContext context) {
     final AppLayout appLayout = AppLayout();
     return Card(
+      color: Colors.teal,
+      // color: '#2C5760'.toColor(),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(
           AppLayout.getHeight(10),
@@ -30,20 +33,30 @@ class _BalanceCardState extends State<BalanceCard> {
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                     ),
-                    child: const Icon(Icons.account_balance_wallet_outlined),
+                    child: const Icon(
+                      Icons.account_balance_wallet_outlined,
+                      color: Colors.white,
+                    ),
                   ),
                   const SizedBox(
                     width: 10,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text('BALANCE'),
-                      Text('₹ 0.00'),
+                    children: [
+                      Text(
+                        'BALANCE',
+                        style: whiteText(16),
+                      ),
+                      Text(
+                        '₹ 0.00',
+                        style: whiteText(14),
+                      ),
                     ],
                   ),
                   const Spacer(),
                   Button(
+                    primaryColor: Colors.teal.withOpacity(0.5),
                     text: 'ADD LEAD & EARN',
                     onPressed: () {},
                   ),
@@ -62,7 +75,7 @@ class _BalanceCardState extends State<BalanceCard> {
                     height: 2,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                     ),
                   ),
@@ -72,10 +85,16 @@ class _BalanceCardState extends State<BalanceCard> {
                 height: 10,
               ),
               Row(
-                children: const [
-                  Text('TOTAL EARNING'),
-                  Spacer(),
-                  Text('₹ 0.00'),
+                children: [
+                  Text(
+                    'TOTAL EARNING',
+                    style: whiteText(16),
+                  ),
+                  const Spacer(),
+                  Text(
+                    '₹ 0.00',
+                    style: whiteText(14),
+                  ),
                 ],
               ),
               const SizedBox(

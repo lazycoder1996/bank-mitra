@@ -13,9 +13,9 @@ class UserAccount extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           colors: [
-            Colors.green,
+            Colors.teal,
             Colors.black87,
-            Colors.green,
+            Colors.teal,
           ],
         ),
         borderRadius: BorderRadius.circular(AppLayout.getHeight(15)),
